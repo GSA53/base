@@ -33,8 +33,9 @@ jobs:
           restore-keys: maven-${{ runner.os }}
 
       - name: Build and analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@v2
+        uses: sonarsource/sonarcloud-github-action@v1
         with:
-          projectBaseDir: .
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
+          projectKey: 'gsa53'
+          organization: 'GSA53'
+
