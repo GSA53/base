@@ -7,6 +7,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.projectKey>gsa53</sonar.projectKey>
+    	<sonar.organization>GSA53</sonar.organization>
+    	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
     <packaging>pom</packaging>
@@ -51,6 +54,10 @@
 					<release>11</release>
 				</configuration>
 			</plugin>
+			<plugin>
+            <groupId>org.sonarsource</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.0.2155</version>
 		</plugins>
 	</build>
 </project>
