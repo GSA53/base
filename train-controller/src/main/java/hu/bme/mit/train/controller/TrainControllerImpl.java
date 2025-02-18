@@ -14,9 +14,12 @@ public void followSpeed() {
         referenceSpeed = 0;
     } else {
         if (step > 0) {
-            referenceSpeed += Math.min(step, 5); // Max 5-tel növelje, ahogy a teszt várja
+            referenceSpeed += step;  // A joystick által vezérelt növelés
+            if (referenceSpeed > 5) {
+                referenceSpeed = 5;   // Ne haladja meg az 5-öt
+            }
         } else {
-            referenceSpeed = Math.max(0, referenceSpeed + step);
+            referenceSpeed = Math.max(0, referenceSpeed + step);  // Csökkentés nem haladhat 0 alá
         }
     }
 
