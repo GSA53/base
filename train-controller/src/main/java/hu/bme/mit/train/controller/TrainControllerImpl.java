@@ -14,17 +14,15 @@ public void followSpeed() {
         referenceSpeed = 0;
     } else {
         if (step > 0) {
-            referenceSpeed += Math.min(step, 5);
+            referenceSpeed += Math.min(step, 5); // Max 5-tel növelje, ahogy a teszt várja
         } else {
             referenceSpeed = Math.max(0, referenceSpeed + step);
         }
     }
 
-    // Biztosítjuk, hogy ne lépje túl a sebességkorlátot
-    if (referenceSpeed > speedLimit) {
-        referenceSpeed = speedLimit;
-    }
+    enforceSpeedLimit();
 }
+
 
 
 	@Override
