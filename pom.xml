@@ -8,7 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.projectKey>gsa53</sonar.projectKey>
-    	<sonar.organization>GSA53</sonar.organization>
+    	<sonar.organization>gsa53</sonar.organization>
     	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
@@ -58,6 +58,11 @@
             	<groupId>org.sonarsource.scanner.maven</groupId>
             	<artifactId>sonar-maven-plugin</artifactId>
             	<version>4.0.0.4121</version>
+				<configuration>
+                	<sonar.projectKey>gsa53</sonar.projectKey>
+                	<sonar.organization>gsa53</sonar.organization>
+                	<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+            	</configuration>
         	</plugin>
     	</plugins>
 	</build>
