@@ -7,6 +7,21 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	private Thread thread;
+
+	public TrainControllerImpl(){
+		thread = new Thread(){
+			public void run(){
+				thread.run();
+				try{
+					followSpeed();
+					thread.sleep(5000);
+				}catch (InterruptedException e){
+					e.printStackTrace();
+				}
+			} 
+		};
+	}
 
 	@Override
 public void followSpeed() {
@@ -14,12 +29,12 @@ public void followSpeed() {
         referenceSpeed = 0;
     } else {
         if (step > 0) {
-            referenceSpeed += step;  // A joystick által vezérelt növelés
-            if (referenceSpeed > 10) { // Növelés korlátozása 10-re
+            referenceSpeed += step;  //a joystick által vezérelt növelés
+            if (referenceSpeed > 10) { //növelés korlátozása 10-re
                 referenceSpeed = 10;
             }
         } else {
-            referenceSpeed = Math.max(0, referenceSpeed + step);  // Csökkentés nem haladhat 0 alá
+            referenceSpeed = Math.max(0, referenceSpeed + step);  //csökkentés nem mehet 0 alá
         }
     }
 
@@ -45,8 +60,7 @@ public void followSpeed() {
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
-		this.step = joystickPosition;
-		//followSpeed();		
+		this.step = joystickPosition;		
 	}
 
 }
