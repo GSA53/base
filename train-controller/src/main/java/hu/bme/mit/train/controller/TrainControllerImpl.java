@@ -10,12 +10,12 @@ public class TrainControllerImpl implements TrainController {
 	private Thread thread;
 
 	public TrainControllerImpl(){
-		thread = new Thread(){
+		thread = new Thread(){ //szál létrehozása
 			public void run(){
-				thread.run();
+				thread.run(); //közvetlenül meghívja a run-t a jelenlegi szálon
 				try{
 					followSpeed();
-					thread.sleep(5000);
+					thread.sleep(5000); //5mp várakozás
 				}catch (InterruptedException e){
 					e.printStackTrace();
 				}
