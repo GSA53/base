@@ -33,5 +33,5 @@ jobs:
       - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn clean verify sonar:sonar -Dsonar.projectKey=gsa53_base -Dsonar.organization=gsa53
+        run: mvn clean verify sonar:sonar -Dsonar.projectKey=GSA53_base -Dsonar.organization=gsa53
 
