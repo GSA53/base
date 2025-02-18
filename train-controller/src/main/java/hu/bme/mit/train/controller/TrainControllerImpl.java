@@ -22,9 +22,6 @@ public void followSpeed() {
 
     enforceSpeedLimit();
 }
-
-
-
 	@Override
 	public int getReferenceSpeed() {
 		return referenceSpeed;
