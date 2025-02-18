@@ -15,8 +15,8 @@ public void followSpeed() {
     } else {
         if (step > 0) {
             referenceSpeed += step;  // A joystick által vezérelt növelés
-            if (referenceSpeed > 5) {
-                referenceSpeed = 5;   // Ne haladja meg az 5-öt
+            if (referenceSpeed > 10) { // Növelés korlátozása 10-re
+                referenceSpeed = 10;
             }
         } else {
             referenceSpeed = Math.max(0, referenceSpeed + step);  // Csökkentés nem haladhat 0 alá
