@@ -45,20 +45,20 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.10.1</version>
-				<configuration>
-					<release>11</release>
-				</configuration>
-			</plugin>
-			<plugin>
-            	<groupId>org.sonarsource</groupId>
+    	<plugins>
+        	<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-compiler-plugin</artifactId>
+            	<version>3.10.1</version>
+            	<configuration>
+                	<release>11</release>
+            	</configuration>
+        	</plugin>
+        	<plugin>
+            	<groupId>org.sonarsource.scanner.maven</groupId>
             	<artifactId>sonar-maven-plugin</artifactId>
-            	<version>3.9.0.2155</version>
-			</plugin>
-		</plugins>
+            	<version>4.0.0.4121</version>
+        	</plugin>
+    	</plugins>
 	</build>
 </project>
