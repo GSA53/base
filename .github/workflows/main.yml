@@ -37,5 +37,5 @@ jobs:
         with:
           sonar-token: ${{ secrets.SONAR_TOKEN }}
           projectKey: 'gsa53'
-          organization: 'GSA53'
+          organization: 'gsa53'
 
